@@ -7,7 +7,7 @@ public class LinkedListTest {
     @Test
     public void testEmptyLinkedList() {
         LinkedList linkedList=new LinkedList();
-        Node head=linkedList.list();
+        Node head= LinkedList.list();
         Assert.assertEquals(null,head);
 
     }
@@ -15,8 +15,23 @@ public class LinkedListTest {
     @Test
     public void testAddItem() {
         LinkedList linkedList=new LinkedList();
-        Comparable head =linkedList.add(1);
-        Assert.assertEquals(1,head);
+        Comparable ele = linkedList.add(1);
+        Assert.assertEquals(1,ele);
+    }
+    @Test
+    public void testAddItem1(){
+        LinkedList linkedList=new LinkedList();
+        Comparable ele= linkedList.add(2);
+        Assert.assertEquals(2,ele);
+    }
+
+    @Test
+    public void testRemoveItem() {
+        LinkedList linkedList=new LinkedList();
+        linkedList.remove(2);
+        Assert.assertEquals(1, linkedList.size());
+
+
     }
 }
 

@@ -8,6 +8,10 @@ package com.UnorderedLinkedList;
             this.next=null;
 
         }
+        @Override
+        public String toString(){
+            return (String) this.data;
+        }
     }
     public class LinkedList<E extends Comparable<E> > {
         public static Node head=null;
@@ -22,8 +26,8 @@ package com.UnorderedLinkedList;
             return null;
         }
 
-        public static<E extends Comparable<E> > E add(E item) {
-            Node newNode=new Node(item);
+        public static<E extends Comparable<E> > E add(E data) {
+            Node newNode=new Node(data);
 
             if(head==null){
                 head=newNode;
@@ -31,7 +35,33 @@ package com.UnorderedLinkedList;
             }
             tail.next=newNode;
             tail=newNode;
-            return item;
+            return data;
+        }
+        public static <E extends Comparable<E> > E remove(E data){
+            Node current=head;
+            Node temp=null;
+         if(data==current.data){
+           current=current.next;
+
+         }
+            while(current!=null && current.data!=data){
+                temp=current;
+                current=current.next;
+            }
+            temp.next=current.next;
+
+
+            return data;
+        }
+
+        public <E extends Comparable<E> >  int size() {
+            int size=0;
+            Node current=head;
+            while(current!=null){
+                size++;
+                current=current.next;
+            }
+            return size;
         }
     }
 
