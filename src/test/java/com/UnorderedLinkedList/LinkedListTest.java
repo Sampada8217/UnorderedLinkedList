@@ -46,5 +46,10 @@ public class LinkedListTest {
         Assert.assertTrue(linkedList.search(1));
 
     }
+    @Test
+    public void testIsEmpty(){
+        LinkedList linkedList=new LinkedList();
+        Assert.assertFalse(linkedList.isEmpty());
+    }
 }
 

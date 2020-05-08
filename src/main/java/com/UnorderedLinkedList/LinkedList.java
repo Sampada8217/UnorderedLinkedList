@@ -79,7 +79,10 @@ package com.UnorderedLinkedList;
             }
 
 
+        public boolean isEmpty() {
+            return size()==0;
         }
+    }
 
 
 
