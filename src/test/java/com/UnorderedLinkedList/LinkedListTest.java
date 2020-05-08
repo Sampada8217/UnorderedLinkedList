@@ -26,11 +26,24 @@ public class LinkedListTest {
     }
 
     @Test
+   public void testAddItem2(){
+        LinkedList linkedList=new LinkedList();
+        Comparable ele= linkedList.add(3);
+        Assert.assertEquals(3,ele);
+    }
+
+    @Test
     public void testRemoveItem() {
         LinkedList linkedList=new LinkedList();
         linkedList.remove(2);
-        Assert.assertEquals(1, linkedList.size());
+        Assert.assertEquals(2, linkedList.size());
 
+    }
+
+    @Test
+    public void testSearchItem() {
+        LinkedList linkedList=new LinkedList();
+        Assert.assertTrue(linkedList.search(1));
 
     }
 }

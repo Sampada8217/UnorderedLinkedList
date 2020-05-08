@@ -63,6 +63,23 @@ package com.UnorderedLinkedList;
             }
             return size;
         }
-    }
+
+        public <E extends Comparable<E> > boolean search(E data) {
+
+            Node current=head;
+            int count=1;
+            if(data==current.data){
+                return true;
+            }
+            while(current!=null && current.data!=data) {
+                current = current.next;
+                count++;
+            }
+                return true;
+            }
+
+
+        }
+
 
 
