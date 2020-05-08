@@ -21,6 +21,18 @@ package com.UnorderedLinkedList;
             }
             return null;
         }
+
+        public static<E extends Comparable<E> > E add(E item) {
+            Node newNode=new Node(item);
+
+            if(head==null){
+                head=newNode;
+                tail=newNode;
+            }
+            tail.next=newNode;
+            tail=newNode;
+            return item;
+        }
     }
 
 
