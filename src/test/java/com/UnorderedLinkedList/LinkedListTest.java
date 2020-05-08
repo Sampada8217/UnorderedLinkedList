@@ -15,28 +15,18 @@ public class LinkedListTest {
     @Test
     public void testAddItem() {
         LinkedList linkedList=new LinkedList();
-        Comparable ele = linkedList.add(1);
-        Assert.assertEquals(1,ele);
-    }
-    @Test
-    public void testAddItem1(){
-        LinkedList linkedList=new LinkedList();
-        Comparable ele= linkedList.add(2);
-        Assert.assertEquals(2,ele);
-    }
-
-    @Test
-   public void testAddItem2(){
-        LinkedList linkedList=new LinkedList();
-        Comparable ele= linkedList.add(3);
-        Assert.assertEquals(3,ele);
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(4);
+        Assert.assertEquals(4,linkedList.size());
     }
 
     @Test
     public void testRemoveItem() {
         LinkedList linkedList=new LinkedList();
-        linkedList.remove(2);
-        Assert.assertEquals(2, linkedList.size());
+        linkedList.remove(4);
+        Assert.assertEquals(3, linkedList.size());
 
     }
 
@@ -55,8 +45,15 @@ public class LinkedListTest {
     @Test
     public void testAppend() {
         LinkedList linkedList=new LinkedList();
-        linkedList.append(4);
+        linkedList.append(5);
         Assert.assertEquals(3,linkedList.size());
+    }
+
+    @Test
+    public void testIndex() {
+        LinkedList linkedList=new LinkedList();
+        Assert.assertEquals(5,linkedList.findIndex(5));
+
     }
 }
 

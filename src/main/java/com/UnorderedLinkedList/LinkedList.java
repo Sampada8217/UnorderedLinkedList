@@ -90,6 +90,19 @@ package com.UnorderedLinkedList;
                 tail = newNode;
             }
         }
+
+        public <E extends Comparable<E> >int findIndex(E data) {
+            int index=1;
+            Node current=head;
+            if(data==current.data){
+                return index;
+            }
+            while(current!=null && current.data!=data){
+                current=current.next;
+                index++;
+            }
+            return index;
+        }
     }
 
 
