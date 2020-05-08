@@ -51,5 +51,12 @@ public class LinkedListTest {
         LinkedList linkedList=new LinkedList();
         Assert.assertFalse(linkedList.isEmpty());
     }
+
+    @Test
+    public void testAppend() {
+        LinkedList linkedList=new LinkedList();
+        linkedList.append(4);
+        Assert.assertEquals(3,linkedList.size());
+    }
 }
 

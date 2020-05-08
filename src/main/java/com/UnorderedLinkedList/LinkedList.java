@@ -82,6 +82,14 @@ package com.UnorderedLinkedList;
         public boolean isEmpty() {
             return size()==0;
         }
+
+        public  <E extends Comparable<E> > void append(E data) {
+            Node newNode = new Node(data);
+            if (head != null) {
+                tail.next = newNode;
+                tail = newNode;
+            }
+        }
     }
 
 
