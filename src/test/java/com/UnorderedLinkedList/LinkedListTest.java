@@ -3,6 +3,8 @@ package com.UnorderedLinkedList;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.List;
+
 public class LinkedListTest {
     @Test
     public void whenCreate_newLinkedList_shouldReturn_emptyList() {
@@ -17,17 +19,15 @@ public class LinkedListTest {
         LinkedList linkedList=new LinkedList();
         linkedList.add(1);
         linkedList.add(2);
-        linkedList.add(3);
-        linkedList.add(4);
         Assert.assertEquals(4,linkedList.size());
     }
 
 
-    @Test
-    public void whenItem_Removed_fromLinkedList_shouldReturnData() {
+   @Test
+    public void whenItem_removed_fromLinkedList_shouldReturnData() {
         LinkedList linkedList=new LinkedList();
-        Comparable data=linkedList.remove(4);
-        Assert.assertEquals(4,data);
+        Comparable data=linkedList.remove(2);
+        Assert.assertEquals(2,data);
     }
 
     @Test
@@ -51,23 +51,26 @@ public class LinkedListTest {
     @Test
     public void whenCheckIndex_returns_positionOfData() {
         LinkedList linkedList=new LinkedList();
-        Assert.assertEquals(2,linkedList.findIndex(2));
-
+        Assert.assertEquals(4,linkedList.findIndex(1));
     }
 
    @Test
-    public void whenAddNewItem_atSpecificPos_returnsPosWhereDataAdded() {
+    public void whenAddNewItem_atSpecificPos_returnsNothing() {
         LinkedList linkedList=new LinkedList();
         Comparable pos=linkedList.insert(8,6);
         Assert.assertEquals(6,pos);
-
     }
 
     @Test
-    public void whenItemRemoved_shouldReturn_LastItem() {
+    public void whenReadCsvFile_shouldPassTest() {
         LinkedList linkedList=new LinkedList();
-
+        CsvReaderWriter csvReaderWriter=new CsvReaderWriter();
+        List<String[]> linkedLists=csvReaderWriter.readFromCsv();
+        linkedList=csvReaderWriter.loadToLinkedList(linkedLists);
+        linkedList.print(linkedList);
+        linkedList.add(10);
 
     }
+
 }
 
